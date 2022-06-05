@@ -1,35 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import ItemList from './ItemList'
-import Productos from './items.json'
+import {ItemList} from './ItemList'
 
-function ItemListContainer({greeting, user, catalogo}) {
-  const [products, ItemList] = useState([])
-
-//   const task = new Promise((res, rej)=> {
-//   setTimeout(()=>{
-//     res(task);
-//     rej("error");
-//   }, 3000)
-// })
-
-  useEffect(() => {
-    fetch(Productos)
-      .then(res => res.json())
-      .catch(error=>console.error("Error:", error))
-      .then(res =>ItemList(Productos))
-  }, [])
+export default function ItemListContainer ({greeting, user, catalogo}) {
   
-  console.log(products)
+useEffect(() =>{
+  const task = new Promise((res, rej)=> {
+
+    setTimeout(() => {
+      res('cumplida')
+    }, 2000);
+      
+    });
+    
+    console.log(task)
+  
+  }, []);
+
  
-  return (
+return (
       <>
       <br />
     <div>{greeting + " " + user + " " + catalogo}
+    <br />
     <ItemList products/>
     </div>
     </>
   )
 }
 
-
-export default ItemListContainer

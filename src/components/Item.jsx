@@ -1,22 +1,20 @@
-import { Button } from 'bootstrap'
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Button, Card } from 'react-bootstrap'
 
-function Item({product}) {
-    const {item, thumbnail, categoria, precio} = product
+export const Item = (props) => {
+
   return (
     <>
     <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={thumbnail} />
+  <Card.Img variant="top" src={props.thumbnail} />
   <Card.Body>
-    <Card.Title>{item}</Card.Title>
-    <Card.Text>{categoria} Aca va la descripción del item</Card.Text>
-    <Button variant="primary" size="md">{precio}</Button>
+    <Card.Title>{props.name}</Card.Title>
+    <Card.Text>{props.categoria} Aca va la descripción del item</Card.Text>
+    <Button variant="primary" size="lg">{props.precio}</Button>
+    <br/>
     <Button variant="primary">COMPRAR</Button>
   </Card.Body>
 </Card>
     </>
   )
 }
-
-export default Item
