@@ -16,14 +16,12 @@ function App() {
   return (
 <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting={"Hola"} user={""} catalogo={"Bienvenido"} />
+      {/* <ItemListContainer greeting={"Hola"} user={""} catalogo={"Bienvenido"} /> */}
       <Routes>
-        {/* <Route  path='/' element={<ItemListContainer />}/> */}
+        <Route  path='/' element={<ItemListContainer />}/>
         <Route  path='/home' element={<Home />}/>
         <Route  path='/contacto' element={<Contacto />}/>
         <Route  path='/nosotros' element={<Nosotros />}/>
-       
-        {/* <ItemCount inicial={1} max={10} onAdd={onAdd}/> */}
       </Routes>
 <ItemCount onAdd={onAdd} inicial={1} max={10} />
 </BrowserRouter>
