@@ -1,29 +1,34 @@
 import React from 'react';
-import { ListGroup,ListGroupItem, Card } from 'react-bootstrap';
+import { ListGroup,ListGroupItem, Card, Button } from 'react-bootstrap';
+import ItemCount from './ItemCount';
 
-export default function ItemDetail({detallin}) {
-    const loQue = detallin[0].map(item=> item.descripcion) 
+export const ItemDetail = ({producto})=> {
+
+const {nombre, categoria, precio, stock, thumbnail} = producto;
+
+const onAdd = (count) => {
+  console.log(`sumaste ${count} productos`)
+}
 
   return (
     <>
   <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+  <Card.Img variant="top" src={thumbnail} />
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
+    <Card.Title>{nombre}</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      DESCRIPCION DEL PRODUCTO
     </Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
-    <ListGroupItem>Cras justo odio</ListGroupItem>
-    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem>Vestibulum at eros</ListGroupItem>
+    <ListGroupItem>{categoria}</ListGroupItem>
+    <ListGroupItem>{precio}</ListGroupItem>
+    <ListGroupItem>{stock}</ListGroupItem>
   </ListGroup>
   <Card.Body>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
+    <Button>COMPRAR</Button>
   </Card.Body>
+  <ItemCount onAdd={onAdd} inicial={1} max={10} />
 </Card>
     </>
   )

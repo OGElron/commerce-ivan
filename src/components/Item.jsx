@@ -1,25 +1,21 @@
 import React from 'react';
-import {useState} from 'react';
 import { Button, Card } from 'react-bootstrap';
-import ItemDetailContainer from './ItemDetailContainer';
-
-
+import { Link } from 'react-router-dom';
 
 export const Item = (props) => {
-  const [montar, setMontar] = useState(false)
   
   return (
     <>
   <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={props.thumbnail} />
   <Card.Body>
-    <Card.Title>{props.name}</Card.Title>
+    <Card.Title>{props.nombre}</Card.Title>
     <Card.Text>{props.categoria} Aca va la descripción del item</Card.Text>
-    <Button variant="primary" size="lg">{props.precio}</Button>
+    <Card.Text>{props.precio}</Card.Text>
     <br/>
     <Button variant="primary">COMPRAR</Button>
-    <Button variant="warning" onClick={()=>{setMontar(true)}}>Detalle</Button>
-      {montar ? <ItemDetailContainer/> : ""}
+    <br/>
+    <Link variant="warning" to={'/producto/'+(props.id)}>Detalle</Link>
   </Card.Body>
 </Card>
     </>

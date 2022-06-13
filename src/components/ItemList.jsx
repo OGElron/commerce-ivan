@@ -1,16 +1,16 @@
 import React from 'react'
 import {Item} from './Item'
 
-
-export const ItemList = ({resultado}) => {
+export const ItemList = ({item}) => {
   return (
     <div style={{display: 'flex', flexWrap: 'wrap'}}>
-      {resultado?.map(resultado=><Item name={resultado.name} 
-      categoria={resultado.categoria} 
-      precio={resultado.precio}
-      stock={resultado.stock} 
-      thumbnail={resultado.thumbnail}
-      key={resultado.id}/>)}
+      {item?.map(item=><Item name={item.name} 
+      categoria={item.categoria} 
+      precio={item.precio}
+      stock={item.stock} 
+      thumbnail={item.thumbnail}
+      id={item.id}
+      key={item.id}/>)}
     </div>
   )
 }
