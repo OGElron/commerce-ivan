@@ -1,11 +1,17 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
+import Botones from './components/Botones';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/Home';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
 import Producto from './components/Producto';
+import TestEventos from './components/TestEventos';
+import Remeras from './components/Remeras';
+import Gorras from './components/Gorras';
+import Mousepads from './components/Mousepads';
+import Tazas from './components/Tazas';
+
 
 
 
@@ -14,13 +20,19 @@ function App() {
   return (
 <BrowserRouter>
       <NavBar />
+      <Botones/>
       <Routes>
-        <Route  path='/' element={<ItemListContainer />}/>
-        <Route  path='/home' element={<Home />}/>
-        <Route  path='/contacto' element={<Contacto />}/>
-        <Route  path='/nosotros' element={<Nosotros />}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/home' element={<Home />}/>
+        <Route path='/contacto' element={<Contacto />}/>
+        <Route path='/nosotros' element={<Nosotros />}/>
         <Route path='/producto' element={<Producto />} />
         <Route path='/producto/:id' element={<Producto />}/>
+        <Route path='/TestEventos' element={<TestEventos />}/>
+        <Route path='/Remeras' element={<Remeras />}/>
+        <Route path='/Gorras' element={<Gorras />}/>
+        <Route path='/Mousepads' element={<Mousepads />}/>
+        <Route path='/Tazas' element={<Tazas />}/>
       </Routes>
 </BrowserRouter>
  );
