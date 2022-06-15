@@ -29,10 +29,10 @@ function App() {
         <Route path='/producto' element={<Producto />} />
         <Route path='/producto/:id' element={<Producto />}/>
         <Route path='/TestEventos' element={<TestEventos />}/>
-        <Route path='/Remeras' element={<Remeras />}/>
-        <Route path='/Gorras' element={<Gorras />}/>
-        <Route path='/Mousepads' element={<Mousepads />}/>
-        <Route path='/Tazas' element={<Tazas />}/>
+        <Route path='/categoria/Remeras' element={<Remeras />}/>
+        <Route path='/categoria/Gorras' element={<Gorras />}/>
+        <Route path='/categoria/Mousepads' element={<Mousepads />}/>
+        <Route path='/categoria/Tazas' element={<Tazas />}/>
       </Routes>
 </BrowserRouter>
  );

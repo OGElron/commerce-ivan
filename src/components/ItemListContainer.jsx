@@ -27,7 +27,7 @@ export default function ItemListContainer() {
 
   return (
     <>
-      <div><ItemList item={item}/></div>
+      <div><ItemList items={item}/></div>
       <br />
       <div>{loading && "Loading.."}</div>
       <div>{error && "Hubo un error inesperado"}</div>
