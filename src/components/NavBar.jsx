@@ -8,10 +8,10 @@ function NavBar() {
     {
   <Navbar bg="primary" variant="dark">
   <Container>
-  <Navbar.Brand><Link to= "./Home">Athlos.ar</Link></Navbar.Brand>
+  <Navbar.Brand><Link className='link'to= "./Home">Athlos.ar</Link></Navbar.Brand>
   <Nav className="me-auto">
-    <Link to="./Nosotros">Nosotros</Link>
-    <Link to="./Contacto">Contacto</Link>
+    <Link className='link'to="./Nosotros">Nosotros</Link>
+    <Link className='link'to="./Contacto">Contacto</Link>
   </Nav>
   <CartWidget/>
   </Container>
