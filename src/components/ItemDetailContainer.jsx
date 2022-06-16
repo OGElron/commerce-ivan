@@ -9,7 +9,7 @@ export default function ItemDetailContainer() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [producto, setProducto] = useState({});
-    const {id} = useParams(producto);
+    const {id} = useParams();
     
     useEffect(() => {
       productos

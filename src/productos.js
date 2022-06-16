@@ -10,16 +10,16 @@ import shop9 from './img/shop9.jpg';
 import shop10 from './img/shop10.jpg';
 
 const items = [
-    {nombre: "Remera Blanca Athlos", categoria: "Remera", precio:1300, stock:5,thumbnail: shop1,id: 1}, 
-    {nombre: "Remera Negra Athlos",categoria: "Remera",precio:1300,stock: 12,thumbnail: shop2,id: 2},
-    {nombre: "Remera Blanca Athlos II",categoria: "Remera",precio:1400,stock: 11,thumbnail: shop3,id: 3},
-    {nombre: "Remera Negra Athlos II",categoria: "Remera",precio:1400,stock: 13,thumbnail: shop4,id: 4},
-    {nombre: "Gorra Athlos Azul",categoria: "Gorra",precio:990,stock:8,thumbnail: shop5,id: 5},
-    {nombre: "Gorra Athlos",categoria: "Gorra",precio:990,stock: 6,thumbnail: shop6,id: 6},
-    {nombre: "Taza Athlos",categoria: "Taza",precio:650,stock: 20,thumbnail: shop7,id: 7},
-    {nombre: "Taza Athlos II",categoria: "Taza",precio:650,stock:23,thumbnail: shop8,id: 8},
-    {nombre: "Mousepad Athlos",categoria: "Mousepad",precio:750,stock:0,thumbnail: shop9,id: 9},
-    {nombre: "Mousepad Athlos II",categoria: "Mousepad",precio:750,stock: 3,thumbnail: shop10,id: 10}
+    {nombre: "Remera Blanca Athlos", categoria: "Remeras", precio:1300, stock:5,thumbnail: shop1,id: 1}, 
+    {nombre: "Remera Negra Athlos",categoria: "Remeras",precio:1300,stock: 12,thumbnail: shop2,id: 2},
+    {nombre: "Remera Blanca Athlos II",categoria: "Remeras",precio:1400,stock: 11,thumbnail: shop3,id: 3},
+    {nombre: "Remera Negra Athlos II",categoria: "Remeras",precio:1400,stock: 13,thumbnail: shop4,id: 4},
+    {nombre: "Gorra Athlos Azul",categoria: "Gorras",precio:990,stock:8,thumbnail: shop5,id: 5},
+    {nombre: "Gorra Athlos",categoria: "Gorras",precio:990,stock: 6,thumbnail: shop6,id: 6},
+    {nombre: "Taza Athlos",categoria: "Tazas",precio:650,stock: 20,thumbnail: shop7,id: 7},
+    {nombre: "Taza Athlos II",categoria: "Tazas",precio:650,stock:23,thumbnail: shop8,id: 8},
+    {nombre: "Mousepad Athlos",categoria: "Mousepads",precio:750,stock:0,thumbnail: shop9,id: 9},
+    {nombre: "Mousepad Athlos II",categoria: "Mousepads",precio:750,stock: 3,thumbnail: shop10,id: 10}
 ]
 
 export const productos = new Promise((res, rej)=> {
