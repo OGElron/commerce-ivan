@@ -6,6 +6,7 @@ import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
 import Producto from './components/Producto';
 import ItemListContainer from './components/ItemListContainer';
+import Cart from './components/Cart';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/nosotros' element={<Nosotros />}/>
         <Route path='/producto/:id' element={<Producto />}/>
         <Route path='/categoria/:categoria' element={<ItemListContainer />}/>
+        <Route path='/cart' element={<Cart />}/>
       </Routes>
 </BrowserRouter>
  );

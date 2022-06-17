@@ -1,13 +1,18 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { ListGroup,ListGroupItem, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 export const ItemDetail = ({producto})=> {
 
 const {nombre, categoria, precio, stock, thumbnail} = producto;
+const [mostrar, setMostrar] = useState(false);
+
 
 const onAdd = (count) => {
-  console.log(`sumaste ${count} productos`)
+  console.log(`sumaste ${count} productos`);
+  setMostrar(true)
 }
 
   return (
@@ -28,7 +33,12 @@ const onAdd = (count) => {
   <Card.Body>
     <Button>COMPRAR</Button>
   </Card.Body>
-  <ItemCount onAdd={onAdd} inicial={1} max={10} />
+  
+  {mostrar ? <div>
+  <Button><Link className='link' to={'../'}>Seguir comprando</Link></Button>
+  <Button><Link className='link' to={'../cart'}>Checkout</Link></Button></div>:
+  <ItemCount onAdd={onAdd} inicial={1} max={10} />}
+  
 </Card>
     </>
   )

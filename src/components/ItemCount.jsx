@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Button} from 'react-bootstrap'
 
+
 const ItemCount = ({inicial, max, onAdd}) => {
     const [count, setCount] = useState(inicial)
 
