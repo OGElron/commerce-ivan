@@ -4,7 +4,7 @@ import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 function CartWidget() {
   return (<>
       <a href="#" className="btnSuccess" style={{color:'white'}}>
-      <FontAwesomeIcon icon={faCartShopping} />0
+      <FontAwesomeIcon icon={faCartShopping} />{numCar}
       </a>
       </>)
 }
