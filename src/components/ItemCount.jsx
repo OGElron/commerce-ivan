@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button} from 'react-bootstrap'
+import { CartContext } from '../context/CartContext'
 
 
 const ItemCount = ({inicial, max, onAdd}) => {
