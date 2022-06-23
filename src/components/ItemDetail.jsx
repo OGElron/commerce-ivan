@@ -16,7 +16,7 @@ const onAdd = (count) => {
   console.log(`sumaste ${count} productos`);
   setMostrar(true)
   enCarrito(id)
-  agregarCarrito(producto, mostrar)
+  agregarCarrito(producto, count)
 }
 
   return (

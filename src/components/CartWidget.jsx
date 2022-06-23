@@ -11,7 +11,7 @@ const CartWidget = () => {
   return (<>
       <a href="#" className="btnSuccess" style={{color:'white'}}>
       <FontAwesomeIcon icon={faCartShopping} />
-      {cantidadProductos()}
+      <p>{cantidadProductos()}</p>
       </a>
       </>)
 }

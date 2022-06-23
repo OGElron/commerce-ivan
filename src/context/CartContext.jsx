@@ -1,16 +1,16 @@
 import { createContext, useState } from 'react';
 
 
-export const CartContext = createContext ()
+export const CartContext = createContext ({})
 
-const {Provider} = CartContext;
+const {Provider} = CartContext
 
 const MyProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([]);
 //Item Detail con some (true, false) chekeamos duplicado
 const enCarrito = (id) => {
-    return carrito.some(x=>x.id===id)
+    return carrito.some(x => x.id === id)
 }
 //Item Detail agrega producto al carro y aumenta cantidad
 const agregarCarrito = (producto, count) => {
@@ -25,7 +25,7 @@ const agregarCarrito = (producto, count) => {
         auxArray[productIndex].count += count
         setCarrito(auxArray)
     } else {
-        setCarrito([...carrito], nuevoItem)
+        setCarrito([...carrito, nuevoItem])
     }
 }
 //Cart - filter se encarga de quitar item con ID

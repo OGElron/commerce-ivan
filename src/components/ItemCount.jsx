@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button} from 'react-bootstrap'
-import { CartContext } from '../context/CartContext'
+import CartContext from '../context/CartContext'
 
 
 const ItemCount = ({inicial, max, onAdd}) => {
@@ -22,11 +22,11 @@ const ItemCount = ({inicial, max, onAdd}) => {
   return (
     <>
         <div className='mb-2'>
-            <Button variant="success" size="sm" onClick={sumar}>+</Button>{' '}
-            <h2>{count}</h2>
-            <Button variant="danger" size="sm" onClick={restar}>-</Button>{' '}
-            <Button variant="primary" size="sm" onClick={()=> {onAdd(count); reset()}}>Agregar al Carrito</Button>{' '}
-            <Button variant="primary" size="sm" onClick={reset}>Reset</Button>{' '}
+            <Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
+            <h2>{count}</h2>-
+            <Button variant="danger" size="sm" onClick={()=>{restar(count)}}>-</Button>
+            <Button variant="primary" size="sm" onClick={()=> {onAdd(count); reset()}}>Agregar al Carrito</Button>
+            <Button variant="primary" size="sm" onClick={reset}>Reset</Button>
         </div>
     </>
   )

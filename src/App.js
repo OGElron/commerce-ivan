@@ -1,3 +1,4 @@
+
 import './App.css';
 import NavBar from './components/NavBar';
 import Botones from './components/Botones';
@@ -7,14 +8,17 @@ import Contacto from './components/Contacto';
 import Producto from './components/Producto';
 import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart';
+import CartContext from "./context/CartContext";
+
 
 
 
 
 function App() {
-  
+
   return (
 <BrowserRouter>
+  <CartContext>
       <NavBar />
       <Botones/>
       <Routes>
@@ -25,6 +29,7 @@ function App() {
         <Route path='/categoria/:categoria' element={<ItemListContainer />}/>
         <Route path='/cart' element={<Cart />}/>
       </Routes>
+  </CartContext>
 </BrowserRouter>
  );
 }
