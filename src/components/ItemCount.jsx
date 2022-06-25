@@ -22,9 +22,10 @@ const ItemCount = ({inicial, max, onAdd}) => {
   return (
     <>
         <div className='mb-2'>
-            <Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
-            <h2>{count}</h2>-
+            <div style={{display: 'flex', justifyContent: 'center'}}><Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
+            <h2>{count}</h2>
             <Button variant="danger" size="sm" onClick={()=>{restar(count)}}>-</Button>
+            </div>
             <Button variant="primary" size="sm" onClick={()=> {onAdd(count); reset()}}>Agregar al Carrito</Button>
             <Button variant="primary" size="sm" onClick={reset}>Reset</Button>
         </div>

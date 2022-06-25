@@ -21,7 +21,7 @@ const onAdd = (count) => {
 
   return (
     <>
-  <Card style={{ width: '18rem' }}>
+  <Card className="tarjetas" style={{ width: '18rem' }}>
   <Card.Img variant="top" src={thumbnail} />
   <Card.Body>
     <Card.Title>{nombre}</Card.Title>
@@ -35,14 +35,11 @@ const onAdd = (count) => {
     <ListGroupItem>{stock}</ListGroupItem>
   </ListGroup>
   <Card.Body>
-    <Button>COMPRAR</Button>
-  </Card.Body>
-  
   {mostrar ? <div>
   <Button><Link className='link' to={'../'}>Seguir comprando</Link></Button>
   <Button><Link className='link' to={'../cart'}>Checkout</Link></Button></div>:
   <ItemCount onAdd={onAdd} inicial={1} max={stock} />}
-  
+  </Card.Body>
 </Card>
     </>
   )
