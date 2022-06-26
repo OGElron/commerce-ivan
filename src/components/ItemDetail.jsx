@@ -37,7 +37,7 @@ const onAdd = (count) => {
   <Card.Body>
   {mostrar ? <div>
   <Button><Link className='link' to={'../'}>Seguir comprando</Link></Button>
-  <Button><Link className='link' to={'../cart'}>Checkout</Link></Button></div>:
+  <Button><Link className='link' to={'../cart'}>Carrito</Link></Button></div>:
   <ItemCount onAdd={onAdd} inicial={1} max={stock} />}
   </Card.Body>
 </Card>
