@@ -22,7 +22,8 @@ const ItemCount = ({inicial, max, onAdd}) => {
   return (
     <>
         <div className='mb-2'>
-            <div style={{display: 'flex', justifyContent: 'center'}}><Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
             <h2>{count}</h2>
             <Button variant="danger" size="sm" onClick={()=>{restar(count)}}>-</Button>
             </div>

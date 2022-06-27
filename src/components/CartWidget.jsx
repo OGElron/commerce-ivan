@@ -11,7 +11,7 @@ const CartWidget = () => {
   
   return (<>
       <Link to='./Cart'>
-      <FontAwesomeIcon icon={faCartShopping} />
+      <FontAwesomeIcon icon={faCartShopping} style={{color: 'white'}} />
       <p>{cantidadProductos()}</p>
       </Link>
       </>)
