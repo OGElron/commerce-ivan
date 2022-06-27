@@ -42,5 +42,12 @@
 }
 .tarjetas {
   text-align: center;
+  padding: 30px;
+}
+.carrito {
+  display: flex;
   padding: 20px;
+}
+.itemCarrito {
+  padding: 10px;
 }
