@@ -1,6 +1,6 @@
 //@ts-check
 import React from 'react'
-import {doc, getDoc, getFirestore} from 'firebase/firestore';
+import {addDoc, doc, getDoc, getFirestore} from 'firebase/firestore';
 
 export default function FBProducto() {
     const id = 'q9KHv8W6qXU9Fw6Ti8ww';
@@ -19,3 +19,14 @@ export default function FBProducto() {
     <div>FB Producto</div>
   )
 }
+/*const db = getFirestore
+function handleClick() {
+  const order = {
+    buyer: {nombre, email, cel},
+    items: carrito,
+    total,
+  };
+
+  }
+}
+addDoc (orderlocation, order)*/

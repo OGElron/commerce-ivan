@@ -10,20 +10,37 @@ export default function ItemListContainer() {
   const [item, setItem] = useState([]);
   const {categoria} = useParams();
 
-  useEffect(() => {
-    productos
-    .then((res)=>{
-      setItem(!categoria ? res : res.filter(pepito => pepito.categoria == categoria))
-      setLoading(false)
-    })
-    .catch(error=>{
-      setError(true);
-      setLoading(false)
-      console.error("Error",error)
-    })
-    .finally(()=>{
-      setLoading(false);
-    })
+  // useEffect(() => {
+  //   productos
+  //   .then((res)=>{
+  //     setItem(!categoria ? res : res.filter(pepito => pepito.categoria == categoria))
+  //     setLoading(false)
+  //   })
+  //   .catch(error=>{
+  //     setError(true);
+  //     setLoading(false)
+  //     console.error("Error",error)
+  //   })
+  //   .finally(()=>{
+  //     setLoading(false);
+  //   })
+  // }, [categoria])
+  useEffect(()=>{
+
+    const db = getFirestore();
+    const itemsCollection = collection(db, 'items');
+
+    getDocs(itemsCollection)
+      .then(items => {
+        setItem(items.docs.map((doc)=> ({...doc.data(), id: doc.id})))
+      })
+      .catch(error => {
+        setError(true);
+        setLoading(false);
+        console.error("error", error)
+      })
+      .finally(()=>{setLoading(false)})
+
   }, [categoria])
   return (
     <>

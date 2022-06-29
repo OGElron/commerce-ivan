@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import CarritoVacio from './CarritoVacio';
-import {Button, Form} from 'react-bootstrap';
+import {Button, Form, Card} from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -41,7 +41,13 @@ export default function Cart() {
         <h1>SU COMPRA</h1>
         {/* <h3>Cantidad : {cantidadProductos()}</h3>
         <h3>Total : {precioProductos()}</h3> */}
-        <Form>
+    <Card>
+    <Form>
+      <Form.Group className="mb-3" controlId="formBasicName">
+        <Form.Label>Nombre</Form.Label>
+        <Form.Control type="name" placeholder="Ingrese su nombre" />
+      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="Ingrese su email" />
@@ -54,6 +60,7 @@ export default function Cart() {
       
       <Button variant="primary" type="submit" onClick={()=>{vaciarCarrito()}}><Link to='../'>CHECKOUT</Link></Button>
     </Form>
+    </Card>
         </div> : (false)
         }
     </div>
