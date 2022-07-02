@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { ItemList } from "./ItemList";
-import { productos } from "../productos";
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
+import { ItemList } from "./ItemList";
 
 
 export default function ItemListContainer() {

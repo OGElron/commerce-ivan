@@ -1,15 +1,15 @@
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import NavBar from './components/NavBar';
 import Botones from './components/Botones';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nosotros from './components/Nosotros';
-import Contacto from './components/Contacto';
-import Producto from './components/Producto';
-import ItemListContainer from './components/ItemListContainer';
-import Cart from './components/Cart';
-import CartContext from "./context/CartContext";
 import CarritoVacio from './components/CarritoVacio';
+import Cart from './components/Cart';
+import Contacto from './components/Contacto';
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar';
+import Nosotros from './components/Nosotros';
+import Producto from './components/Producto';
+import CartContext from "./context/CartContext";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use

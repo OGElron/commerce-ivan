@@ -1,5 +1,4 @@
-import React from 'react'
-import { ButtonGroup,Button } from 'react-bootstrap'
+import { Button, ButtonGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import Categorias from './Categorias'
 

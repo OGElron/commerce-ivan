@@ -1,10 +1,8 @@
-import React from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { Button, Card } from 'react-bootstrap';
 import { CartContext } from '../context/CartContext';
 import CarritoVacio from './CarritoVacio';
-import {Button, Form, Card} from 'react-bootstrap';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Checkout from './Checkout';
 
 
 export default function Cart() {
@@ -34,17 +32,16 @@ export default function Cart() {
       <h2>Cantidad Total {cantidadProductos()}</h2>
       <h2>Total {precioProductos()}</h2>
       <Button onClick={()=>{vaciarCarrito()}}>Vaciar Carrito</Button>
-      <Button onClick={()=>setTerminar(true)}>Terminar compra</Button>
-      {/* solamente se puede usar una vez, tira [object, Object] y despues se rompe
-      <p>Total: {precioProductos()}</p> */}
+      <Button onClick={()=>setTerminar(true)}>Checkout</Button>
+  
       {terminar? 
         <div>
-        <h1>SU COMPRA</h1>
-        {/* <h3>Cantidad : {cantidadProductos()}</h3>
-        <h3>Total : {precioProductos()}</h3> */}
-    <Card>
-    
-    </Card>
+          <h1>SU COMPRA</h1>
+          <h3>Cantidad : {cantidadProductos()}</h3>
+          <h3>Total : {precioProductos()}</h3>
+          <Card>
+            <Checkout/>
+          </Card>
         </div> : (false)
         }
     </div>

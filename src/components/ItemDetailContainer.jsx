@@ -32,7 +32,7 @@ export default function ItemDetailContainer() {
     
     }, [id])
 
-
+    console.log(producto)
   return (
     <>
     <div>{producto && <ItemDetail producto={producto}/>}</div>
