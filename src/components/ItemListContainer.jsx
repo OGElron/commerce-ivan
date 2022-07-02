@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
 import { productos } from "../productos";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, getFirestore, query, where} from 'firebase/firestore'
 
 
 export default function ItemListContainer() {
@@ -10,38 +11,44 @@ export default function ItemListContainer() {
   const [item, setItem] = useState([]);
   const {categoria} = useParams();
 
-  // useEffect(() => {
-  //   productos
-  //   .then((res)=>{
-  //     setItem(!categoria ? res : res.filter(pepito => pepito.categoria == categoria))
-  //     setLoading(false)
-  //   })
-  //   .catch(error=>{
-  //     setError(true);
-  //     setLoading(false)
-  //     console.error("Error",error)
-  //   })
-  //   .finally(()=>{
-  //     setLoading(false);
-  //   })
-  // }, [categoria])
+ 
   useEffect(()=>{
-
     const db = getFirestore();
     const itemsCollection = collection(db, 'items');
+    
+    if (categoria) {
 
-    getDocs(itemsCollection)
+      const qcategoria = query(itemsCollection, where('categoria', '==', categoria))
+
+      getDocs(qcategoria)
       .then(items => {
-        setItem(items.docs.map((doc)=> ({...doc.data(), id: doc.id})))
+        setItem(items.docs.map((doc)=> ({...doc.data(), categoria: doc.categoria})));
       })
       .catch(error => {
         setError(true);
-        setLoading(false);
+        setLoading(false); 
         console.error("error", error)
       })
       .finally(()=>{setLoading(false)})
 
-  }, [categoria])
+  } else {
+    
+    getDocs(itemsCollection)
+    .then(items => {
+      setItem(items.docs.map((doc)=> ({...doc.data(), id: doc.id})));
+    })
+    .catch(error => {
+      setError(true);
+      setLoading(false);
+      console.error("error", error)
+    })
+    .finally(()=>{setLoading(false)});
+
+}
+}, [categoria]);
+  
+
+   
   return (
     <>
       <div><ItemList items={item}/></div>
@@ -49,5 +56,6 @@ export default function ItemListContainer() {
       <div>{loading && "Loading.."}</div>
       <div>{error && "Hubo un error inesperado"}</div>
     </>
-  );
-}
+  )
+  }
+

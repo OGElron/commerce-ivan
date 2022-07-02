@@ -9,7 +9,7 @@ export default function Botones() {
     <>
 
    <ButtonGroup size="lg" className="mb-2">
-    <h4>Categorias</h4>
+    <Button><Link className='link' to="/">Categorias</Link></Button>
     <Button><Link className='link' to="/categoria/Remeras">Remeras</Link></Button>
     <Button><Link className='link'to="/categoria/Gorras">Gorras</Link></Button>
     <Button><Link className='link'to="/categoria/Tazas">Tazas</Link></Button>
