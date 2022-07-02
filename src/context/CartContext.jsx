@@ -40,7 +40,7 @@ const cantidadProductos= () => {
 }
 // Cart reduce - retorna precio total del carrito
 const precioProductos= () => {
-    return carrito.reduce((acc, x) => acc += x.count * x.precio)
+    return carrito.reduce((acc, x) => acc += x.count * x.precio, 0)
 }
     
     return (

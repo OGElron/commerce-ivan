@@ -32,6 +32,7 @@ export default function Cart() {
     <div>
       <br />
       <h2>Cantidad Total {cantidadProductos()}</h2>
+      <h2>Total {precioProductos()}</h2>
       <Button onClick={()=>{vaciarCarrito()}}>Vaciar Carrito</Button>
       <Button onClick={()=>setTerminar(true)}>Terminar compra</Button>
       {/* solamente se puede usar una vez, tira [object, Object] y despues se rompe
@@ -42,24 +43,7 @@ export default function Cart() {
         {/* <h3>Cantidad : {cantidadProductos()}</h3>
         <h3>Total : {precioProductos()}</h3> */}
     <Card>
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Nombre</Form.Label>
-        <Form.Control type="name" placeholder="Ingrese su nombre" />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control type="email" placeholder="Ingrese su email" />
-      </Form.Group>
     
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Telefono</Form.Label>
-        <Form.Control type="phone" placeholder="Ingrese su telefono" />
-      </Form.Group>
-      
-      <Button variant="primary" type="submit" onClick={()=>{vaciarCarrito()}}><Link to='../'>CHECKOUT</Link></Button>
-    </Form>
     </Card>
         </div> : (false)
         }

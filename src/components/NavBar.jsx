@@ -12,6 +12,7 @@ function NavBar() {
   <Nav className="me-auto">
     <Link className='link'to="./Nosotros">Nosotros</Link>
     <Link className='link'to="./Contacto">Contacto</Link>
+    <Link className='link'to="./Cart">Carrito</Link>
   </Nav>
   <CartWidget/>
   </Container>

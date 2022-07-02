@@ -1,9 +1,8 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
-import {ItemDetail} from './ItemDetail';
-import {useParams} from 'react-router-dom'
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { productos } from '../productos';
-import {doc, getDoc, getFirestore} from 'firebase/firestore'
+import { ItemDetail } from './ItemDetail';
 
 
 
@@ -11,8 +10,6 @@ export default function ItemDetailContainer() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [producto, setProducto] = useState({});
-    const colection = 'items';
-    const db = getFirestore();
     const {id} = useParams();
   
     useEffect(()=>{
