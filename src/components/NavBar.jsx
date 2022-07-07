@@ -6,10 +6,10 @@ import {Link} from 'react-router-dom'
 function NavBar() {
     return <>
     {
-  <Navbar bg="primary" variant="dark">
+  <Navbar className='menu' bg="primary" variant="dark">
   <Container>
   <Navbar.Brand><Link className='link'to= "./">Athlos.ar</Link></Navbar.Brand>
-  <Nav className="me-auto">
+  <Nav className="me-auto gap-4">
     <Link className='link'to="./Nosotros">Nosotros</Link>
     <Link className='link'to="./Contacto">Contacto</Link>
     <Link className='link'to="./Cart">Carrito</Link>

@@ -44,6 +44,11 @@
   text-align: center;
   padding: 30px;
 }
+
+.titulo {
+  color: black;
+  font-weight: 900;
+}
 .carrito {
   display: flex;
   padding: 20px;
@@ -53,4 +58,15 @@
 }
 .botonera {
   color: white;
+  padding: 10px;
+}
+.precio {
+  font-weight: bolder;
+  font-size: larger;
+  color: rgb(52, 120, 197);
+  background-color: rgb(221, 216, 216);
+  border-radius: 20px;
+}
+.menu {
+  padding-inline: 20px;
 }

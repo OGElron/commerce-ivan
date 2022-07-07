@@ -3,17 +3,17 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../context/CartContext';
 import {Form, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {addDoc, collection, getFirestore} from 'firebase/firestore'
+import {addDoc, collection, getFirestore} from 'firebase/firestore';
+
 
 export default function Checkout() {
-    const [nombre, setNombre] = useState();
-    const [email, setEmail] = useState();
-    const [cel, setCel] = useState();
+    const [nombre, setNombre] = useState('');
+    const [email, setEmail] = useState('');
+    const [cel, setCel] = useState('');
 
     const db = getFirestore();
     const orderCollection = collection (db, 'orders');
-
-    const {carrito, preciosProductos} = useContext(CartContext);
+    const {carrito, preciosProductos, vaciarCarrito} = useContext(CartContext);
 
 
     function handleClick() {
@@ -22,14 +22,12 @@ export default function Checkout() {
             items: carrito,
             total: preciosProductos
         }
-
-
-    addDoc(orderCollection, order).then(({id})=>{
-        console.log(id)
-    });
-    }
-    
-  
+            
+        addDoc(orderCollection, order).then(({id})=>{
+            console.log(id)
+        });
+        vaciarCarrito();
+        }
 
   return (
    <>
@@ -51,7 +49,7 @@ export default function Checkout() {
         </Form.Group>
         
         <Button variant="primary" type="submit">
-                <Link className= 'link' to='../'>TERMINAR COMPRA</Link>
+                <Link className= 'link' to='../' onClick={handleClick()}>TERMINAR COMPRA</Link>
             </Button>
         </Form>
     </div>
@@ -61,4 +59,3 @@ export default function Checkout() {
    </>
   )
 }
-

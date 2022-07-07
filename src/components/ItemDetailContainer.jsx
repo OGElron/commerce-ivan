@@ -21,7 +21,6 @@ export default function ItemDetailContainer() {
       getDoc(itemRef)
         .then((snap) => {
           setProducto({...snap.data(), id: snap.id})
-          console.log(productos)
         })
         .catch(error => {
           setError(true);
@@ -31,8 +30,6 @@ export default function ItemDetailContainer() {
         .finally(()=>{setLoading(false)})
     
     }, [id])
-
-    console.log(producto)
   return (
     <>
     <div>{producto && <ItemDetail producto={producto}/>}</div>
