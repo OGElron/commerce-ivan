@@ -43,6 +43,28 @@
 .tarjetas {
   text-align: center;
   padding: 30px;
+ 
+}
+.tarjetas2 {
+  padding: 50px;
+  text-align: center;
+  text-justify: auto;
+  margin-left: 3rem;
+ 
+}
+.detnombre {
+  font-size: xx-large;
+}
+.detprecio {
+  color: blue;
+  font-size: xx-large;
+}
+.bodybot {
+  justify-content: space-around;
+}
+.contador {
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .titulo {
@@ -59,6 +81,7 @@
 .botonera {
   color: white;
   padding: 10px;
+  float: inline-end;
 }
 .precio {
   font-weight: bolder;
@@ -69,4 +92,10 @@
 }
 .menu {
   padding-inline: 20px;
+}
+.carritowid {
+  display: inline;
+}
+.swal-overlay {
+  background-color: rgba(22, 12, 114, 0.507);
 }

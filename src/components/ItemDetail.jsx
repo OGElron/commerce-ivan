@@ -7,13 +7,12 @@ import ItemCount from './ItemCount';
 
 export const ItemDetail = ({producto})=> {
 
-const {nombre, categoria, precio, stock, thumbnail,id} = producto;
+const {nombre, categoria, precio, stock, thumbnail,id, descripcion} = producto;
 const [mostrar, setMostrar] = useState(false);
 
 const {enCarrito, agregarCarrito} = useContext(CartContext)
 
 const onAdd = (count) => {
-  console.log(`sumaste ${count} productos`);
   setMostrar(true)
   enCarrito(id)
   agregarCarrito(producto, count)
@@ -21,25 +20,29 @@ const onAdd = (count) => {
 
   return (
     <>
-  <Card className="tarjetas" style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={thumbnail} />
-  <Card.Body>
-    <Card.Title>{nombre}</Card.Title>
-    <Card.Text>
-      DESCRIPCION DEL PRODUCTO
-    </Card.Text>
-  </Card.Body>
-  <ListGroup className="list-group-flush">
-    <ListGroupItem>{categoria}</ListGroupItem>
-    <ListGroupItem>{precio}</ListGroupItem>
-    <ListGroupItem>{stock}</ListGroupItem>
-  </ListGroup>
-  <Card.Body>
-  {mostrar ? <div>
-  <Button><Link className='link' to={'../'}>Seguir comprando</Link></Button>
-  <Button><Link className='link' to={'../cart'}>Carrito</Link></Button></div>:
-  <ItemCount onAdd={onAdd} inicial={1} max={stock} />}
-  </Card.Body>
+  <Card className="tarjetas2 ml-4" 
+  style={{ width: '35rem' }} 
+  bg='light' text='black' 
+  border='dark' >
+
+    <Card.Img variant="top" src={thumbnail} />
+      <Card.Body className='bodytop'>
+        <Card.Title className='detnombre'>{nombre}</Card.Title>
+        <Card.Text>
+          {descripcion}
+        </Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroupItem>{categoria}</ListGroupItem>
+        <ListGroupItem className='detprecio'>{precio}</ListGroupItem>
+        <ListGroupItem>{stock}</ListGroupItem>
+      </ListGroup>
+      <Card.Body className='bodybot'>
+        {mostrar ? <div>
+        <Button><Link className='link' to={'../'}>Seguir comprando</Link></Button>
+        <Button><Link className='link' to={'../cart'}>Carrito</Link></Button></div>:
+        <ItemCount onAdd={onAdd} inicial={1} max={stock} />}
+    </Card.Body>
 </Card>
     </>
   )

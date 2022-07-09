@@ -17,7 +17,7 @@ export const ItemList = ({items}) => {
         stock={item.stock} 
         thumbnail={item.thumbnail}
         id={item.id}
-        key={item.id}/>)}
+        key={item.key}/>)}
     </div>
   )
 }

@@ -19,13 +19,14 @@ const ItemCount = ({inicial, max, onAdd}) => {
 
   return (
     <>
-        <div className='mb-2'>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-            <Button variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
+        <div className='contador'>
+            <div style={{display: 'flex', justifyContent: 'space-around'}}>
+            <Button style={{borderRadius: 30}} variant="success" size="sm" onClick={()=>{sumar(count)}}>+</Button>
             <h2>{count}</h2>
-            <Button variant="danger" size="sm" onClick={()=>{restar(count)}}>-</Button>
+            <Button style={{borderRadius: 30}} variant="danger" size="sm" onClick={()=>{restar(count)}}>-</Button>
             </div>
-            <Button variant="primary" size="sm" onClick={()=> {onAdd(count); reset()}}>Agregar al Carrito</Button>
+            <br></br>
+            <Button style={{marginInline: 20}} variant="primary" size="sm" onClick={()=> {onAdd(count); reset()}}>Agregar al Carrito</Button>
             <Button variant="primary" size="sm" onClick={reset}>Reset</Button>
         </div>
     </>

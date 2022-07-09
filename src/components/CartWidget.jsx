@@ -10,8 +10,8 @@ const CartWidget = () => {
   
   return (<>
       <Link to='./Cart'>
-      <FontAwesomeIcon icon={faCartShopping} style={{color: 'white'}} />
-      <p style={{color: 'white'}}>{cantidadProductos()}</p>
+      <FontAwesomeIcon icon={faCartShopping} style={{color: 'white'}} size="2x"/>
+      <p style={{color: 'white'}} className='carritowid'>{cantidadProductos()}</p>
       </Link>
       </>)
 }

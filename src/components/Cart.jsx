@@ -11,14 +11,13 @@ export default function Cart() {
 
   return (
     <>
-    {carrito.length > 0 ? (carrito.map(({thumbnail, nombre, precio, id, count})=>
+    {carrito.length > 0 ? (carrito.map(({thumbnail, nombre, precio, id, count, key})=>
   
     <div className='carrito'>
-        <img style={{height:'70px', width:'70px'}} src='{thumbnail}'></img>
+        <img style={{height:'70px', width:'70px'}} src={thumbnail}></img>
         <h4 className='itemCarrito'>{nombre}</h4>
         <h4 className='itemCarrito'>${precio}</h4>
         <h4 className='itemCarrito'>{count}</h4>
-        <h4>{}</h4>
         <Button onClick={()=>{quitarCarrito(id)}}>Remover</Button>
     </div>
   

@@ -10,6 +10,7 @@ export default function CarritoVacio() {
         title: "El carrito está vacío",
         text: "Vuelve a la tienda para comprar algo... o quedate fuera de onda, tu decisión",
         icon: "warning",
+        button: "OK"
       }
     ) 
 }

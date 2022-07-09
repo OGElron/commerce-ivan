@@ -21,7 +21,7 @@ export default function ItemListContainer() {
 
       getDocs(qcategoria)
       .then(items => {
-        setItem(items.docs.map((doc)=> ({...doc.data(), categoria: doc.categoria})));
+        setItem(items.docs.map((doc)=> ({...doc.data(), id: doc.id})));
       })
       .catch(error => {
         setError(true);
