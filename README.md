@@ -4,7 +4,7 @@ This project is for React JS course for Coderhouse. Athlos e-commerce is a site 
 
 ## Demo
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/JfQs83D" data-context="false" ><a href="//imgur.com/a/JfQs83D"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src=https://imgur.com/D7LmAfw.gif />
 
 
 ## Deployment
