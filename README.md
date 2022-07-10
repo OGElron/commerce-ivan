@@ -4,7 +4,7 @@ This project is for React JS course for Coderhouse. Athlos e-commerce is a site 
 
 ## Demo
 
-<img src=https://imgur.com/D7LmAfw.gif />
+![Demo](https://imgur.com/D7LmAfw.gif)
 
 
 ## Deployment
